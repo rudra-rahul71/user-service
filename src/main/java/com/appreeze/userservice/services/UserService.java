@@ -11,7 +11,11 @@ public class UserService {
 
     private final ProductRepository userRepo;
 
-    public User getUserById(String id) {
+    public User searchUser(String id) {
         return userRepo.findByUserId(id);
+    }
+
+    public User createUser(User user) {
+        return userRepo.save(user);
     }
 }
